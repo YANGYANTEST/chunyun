@@ -12,6 +12,11 @@ results 正则匹配
 """
 stations = r.text
 results = re.findall(r'([\u4e00-\u9fa5]+)\|([A-Z]+)', stations)
+results=dict(results)
 
-# 列表==》 字典
-print(dict(results))
+# # 列表==》 字典
+# print(dict(results))
+
+
+print(results.keys())
+print(results.values())

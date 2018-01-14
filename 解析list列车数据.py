@@ -1,6 +1,6 @@
 
 
-info="车次 出发站到达站	出发时间到达时间 历时	商务座s特等座	一等座	二等座	高级 软卧 软卧 动卧	硬卧 软座 硬座 无座	其他 备注"
+info="车次 出发站 到达站 出发时间 到达时间 历时	商务座 特等座	一等座	二等座	高级 软卧 软卧 动卧	硬卧 软座 硬座 无座	其他 备注"
 
 
 #解析第一条数据
@@ -14,9 +14,16 @@ for index,value in enumerate(trainlist):
 
 trainrow=[]
 trainrow.extend(trainlist[3:6])
+trainlist[4]=stations.getCityName(trainlist[4])
+trainlist[5]=stations.getCityName(trainlist[5])
+# print(trainlist[4],trainlist[5])
+trainrow.append(trainlist[3])
+trainrow.append(trainlist[4])
+trainrow.append(trainlist[5])
 trainrow.extend(trainlist[8:11])
-trainrow.extend(trainlist[32:20:-1])
-print(trainrow)
+trainrow.extend(trainlist[32:21:-1])
+# print(info)
+# print(trainrow)
 
 
 
